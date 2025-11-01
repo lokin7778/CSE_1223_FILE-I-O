@@ -5,6 +5,7 @@ import java.util.Scanner;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class studentgradeManager{
 
@@ -13,12 +14,32 @@ public class studentgradeManager{
         // creates a scanner object 'console'
         Scanner console = new Scanner(System.in);
 
+        // creates a variable to be the while-loop counter variable
         String optionToContinue = "Y";
 
+        // while-loop to ask the user input
         while(optionToContinue.equals("Y")){
 
             System.out.print("Enter the student name: ");
             String sName = console.nextLine();
+
+            System.out.print("Enter how many subjects do you want to enter the grades for: ");
+            int noOfSub = Integer.parseInt(console.nextLine());
+
+            // Arraylist to hold the student marks
+            ArrayList<Integer> sMarks = new ArrayList<>(); 
+
+            // nested for-loop to enter the marks for individual subjects
+            for (int i = 1; i <= noOfSub; i++){
+
+                System.out.print("Enter marks for subject " + i);
+                int sMarki = Integer.parseInt(console.nextLine());
+
+                sMarks.add(sMarki);
+            }
+
+            
+            
         }
 
     }
