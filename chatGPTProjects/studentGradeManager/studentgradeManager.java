@@ -32,7 +32,7 @@ public class studentgradeManager{
             // nested for-loop to enter the marks for individual subjects
             for (int i = 1; i <= noOfSub; i++){
 
-                System.out.print("Enter marks for subject " + i);
+                System.out.print("Enter marks for subject " + i + ": ");
                 int sMarki = Integer.parseInt(console.nextLine());
 
                 sMarks.add(sMarki);
@@ -45,6 +45,7 @@ public class studentgradeManager{
 
                     writer.write(sMarks.get(j));
                 }
+                writer.newLine();
                 
             }
             catch(IOException e){
@@ -57,10 +58,9 @@ public class studentgradeManager{
             String choice = console.nextLine();
             if (choice.equalsIgnoreCase("N")){
                 optionToContinue = "N";
+                
             }
-            
         }
-
         console.close();
 
     }
