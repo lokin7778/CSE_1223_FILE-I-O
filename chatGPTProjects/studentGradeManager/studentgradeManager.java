@@ -35,7 +35,7 @@ public class studentgradeManager{
 
                     System.out.print("Enter marks for subject " + i + ": ");
                     int sMarki = Integer.parseInt(console.nextLine());
-                    writer.write(sMarki);
+                    writer.write(sMarki + ", ");
                 }
 
                 writer.newLine();
