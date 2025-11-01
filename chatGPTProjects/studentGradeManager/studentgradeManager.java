@@ -5,7 +5,6 @@ import java.util.Scanner;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class studentgradeManager{
 
@@ -24,29 +23,22 @@ public class studentgradeManager{
             String sName = console.nextLine();
 
             System.out.print("Enter how many subjects do you want to enter the grades for: ");
-            int noOfSub = Integer.parseInt(console.nextLine());
-
-            // Arraylist to hold the student marks
-            ArrayList<Integer> sMarks = new ArrayList<>(); 
-
-            // nested for-loop to enter the marks for individual subjects
-            for (int i = 1; i <= noOfSub; i++){
-
-                System.out.print("Enter marks for subject " + i + ": ");
-                int sMarki = Integer.parseInt(console.nextLine());
-
-                sMarks.add(sMarki);
-            }
+            int noOfSub = Integer.parseInt(console.nextLine()); 
 
             try(BufferedWriter writer = new BufferedWriter(new FileWriter ("studentGrades.txt",true))){
 
                 writer.write(sName);
-                for (int j = 0; j < sMarks.size(); j++){
+                writer.write("\t\t");
 
-                    writer.write(sMarks.get(j));
+                // nested for-loop to enter the marks for individual subjects
+                for (int i = 1; i <= noOfSub; i++){
+
+                    System.out.print("Enter marks for subject " + i + ": ");
+                    int sMarki = Integer.parseInt(console.nextLine());
+                    writer.write(sMarki);
                 }
+
                 writer.newLine();
-                
             }
             catch(IOException e){
                 System.err.println("ERROR: " + e.getMessage());
