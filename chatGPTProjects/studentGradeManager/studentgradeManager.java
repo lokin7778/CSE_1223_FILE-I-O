@@ -38,7 +38,18 @@ public class studentgradeManager{
                 sMarks.add(sMarki);
             }
 
-            
+            try(BufferedWriter writer = new BufferedWriter(new FileWriter ("studentGrades.txt",true))){
+
+                writer.write(sName);
+                for (int j = 0; j < sMarks.size(); j++){
+
+                    writer.write(sMarks.get(j));
+                }
+                
+            }
+            catch(IOException e){
+                System.err.println("ERROR: " + e.getMessage());
+            }
             
         }
 
