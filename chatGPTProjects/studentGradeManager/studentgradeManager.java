@@ -18,7 +18,7 @@ public class studentgradeManager{
         String optionToContinue = "Y";
 
         // while-loop to ask the user input
-        while(optionToContinue.equals("Y")){
+        while(optionToContinue.equalsIgnoreCase("Y")){
 
             System.out.print("Enter the student name: ");
             String sName = console.nextLine();
@@ -50,8 +50,18 @@ public class studentgradeManager{
             catch(IOException e){
                 System.err.println("ERROR: " + e.getMessage());
             }
+
+            System.out.println("RECORD SUCCESSFULLY ADDED!");
+
+            System.out.print("Do you want to continue? (Y/N): ");
+            String choice = console.nextLine();
+            if (choice.equalsIgnoreCase("N")){
+                optionToContinue = "N";
+            }
             
         }
+
+        console.close();
 
     }
 }
